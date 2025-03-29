@@ -1,45 +1,325 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f3f4f6;
-    font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	/* background: linear-gradient(to right, 
+			#4a9be2, #c44785);*/
+	background-image:url('./imgsrc.jpg');
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow-x: hidden;
 }
 
-.login-container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+.container {
+	background: rgba(142, 77, 4, 0.0);
+	padding: 50px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+	width: 95%; 
+	height: 100%;
+	border-left: 50px;
+	overflow: hidden;
+	text-align: right; 
+	max-width: 1700px;
+	/* margin-left: 1000px;
+	margin-right: 350px; */
+	margin :auto;
 }
 
-.login-container h2 {
-    margin-bottom: 20px;
-    color: #333;
+h1 {
+	font-size: 30px;
+	color: rgb(4, 31, 4);
+	margin-bottom: 30px;
+	margin-right: 120px;
+
 }
 
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.search-container {
+	display: flex;
+	align-items: center;
+    
+	margin-left: 850px; 
+	
 }
 
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+i {
+	font-size: 24px;
+	margin-right: 10px;
+	/* margin-bottom: 500px; */
+	color: #333;
 }
 
-.login-container button:hover {
-    background: #0056b3;
+input {
+	flex: 1;
+	padding: 10px;
+	font-size: 16px;
+	color: #000000;
+	border: none;
+	border-color: #2c0b0b;
+	background-color:rgba(255, 255, 255, 0.9) ;
+	/* margin-bottom: 500px; */
+	
+	
 }
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 6px;
+	margin-left: 5px;
+	/* margin-bottom: 500px; */
+	cursor: pointer;
+	background: #FF4848;
+	color: #fff;
+}
+
+#searchBtn:hover {
+	background: #FF6565;
+}
+
+.recipe-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill,
+			minmax(200px, 1fr));
+	gap: 10px;
+	max-width: 100%;
+	overflow-y: auto;
+	max-height: 70vh;
+}
+
+.recipe-card {
+	/* background: linear-gradient(to right,
+			#a0f8a4, rgb(160, 212, 255), 90%, 54%); */
+	border-radius: 20px;
+	padding: 8px;
+	box-shadow: 0 2px 5px rgb(22, 22, 192);
+	transition: transform 0.3s ease-in-out;
+	overflow: hidden;
+	text-align: center;
+}
+
+.recipe-card:hover {
+	transform: scale(1.03);
+}
+
+.recipe-card img {
+	max-width: 70%;
+	height: 40%;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.recipe-card h3 {
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.recipe-card p {
+	font-size: 14px;
+	color: rgb(0, 0, 0);
+	margin-bottom: 10px;
+}
+
+.show-recipe-btn {
+	background: #FF4848;
+	color: #fff;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.show-recipe-btn:hover {
+	background: #FF6565;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	width: 100%;
+    overflow: scroll;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	color: #000000;
+	cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+	.recipe-container {
+		grid-template-columns: repeat(auto-fill,
+				minmax(100%, 1fr));
+        
+	}
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+	margin-right: 50px;
+	
+	
+}
+
+i {
+	font-size: 24px;
+	margin-right: 10px;
+	color: #333;
+}
+
+input {
+	flex: 1;
+	padding: 10px;
+	font-size: 16px;
+	border: none; 
+	border-radius:20px;
+	border-color: #0c0505;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 20px;
+	border-left: 10px;
+	border-right: 20px;
+	cursor: pointer;
+	background: #FF4848;
+	color: #fff;
+}
+
+#searchBtn:hover {
+	background: #FF6565;
+}
+
+.recipe-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill,
+			minmax(200px, 1fr));
+	gap: 10px;
+	max-width: 100%;
+	overflow-y: scroll;
+	max-height: 70vh;
+}
+
+.recipe-card {
+	/* background: linear-gradient(to right,
+			#05afa6,
+			rgb(160, 212, 255), 90%, 54%); */
+	background: rgba(164, 100, 27, 0.5);
+	border-radius: 20px;
+	padding: 8px;
+	box-shadow: 1px 1px 2px 5px rgb(255, 91, 91);
+	transition: transform 0.3s ease-in-out;
+	/* overflow: hidden; */
+	text-align: center;
+}
+
+.recipe-card:hover {
+	transform: scale(1.03);
+}
+
+.recipe-card img {
+	max-width: 70%;
+	height: 40%;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.recipe-card h3 {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+.recipe-card p {
+	font-size: 14px;
+	color: rgb(0, 0, 0);
+	margin-bottom: 10px;
+}
+
+.show-recipe-btn {
+	background: #FF4848;
+	color: #fff;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.show-recipe-btn:hover {
+	background: #FF6565;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	width: 100%;
+    height: 50%;
+  
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	color: #000000;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+	.recipe-container {
+		grid-template-columns: repeat(auto-fill,
+				minmax(100%, 1fr));
+	}
+}
+
