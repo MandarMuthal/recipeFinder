@@ -1,36 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link href=
-"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-	rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
-	<title>Best dishes with Recipe </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f7f2">
+    <meta name="description" content="Discover delicious meals, explore ingredients, and find recipes for your next meal.">
+
+    <title>Dish Discovery | Find Your Next Favorite Meal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="file.js" defer></script>
 </head>
 
 <body>
-	<div class="container">
-		<h1>Best Dishes With Recipe</h1>
-		<div class="search-container">
-			<i class="fas fa-search"></i>
-			<input type="text" id="searchInput"
-				placeholder="Search for recipes">
-			<button id="searchBtn">Search</button>
-		</div>
-		<div class="recipe-container" id="recipeContainer"></div>
-	</div>
-	<div class="modal" id="recipeModal">
-		<div class="modal-content">
-			<span class="close" id="closeBtn">×</span>
-			<div id="modalContent"></div>
-		</div>
-	</div>
-	<script src="file.js"></script>
-</body>
+    <header class="site-header">
+        <a href="#" class="brand" aria-label="Dish Discovery home">
+            <span class="brand-icon">
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+            </span>
+            <span>dish<span class="brand-highlight">discovery</span></span>
+        </a>
 
+        <span class="header-note">Good food. Great moments.</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">
+                <i class="fas fa-seedling" aria-hidden="true"></i>
+                YOUR NEXT MEAL STARTS HERE
+            </span>
+
+            <h1>Find your next<br>
+                <span>favorite meal.</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore delicious dishes, discover new flavors,
+                and find recipes to make at home.
+            </p>
+
+            <form class="search-container" id="searchForm" role="search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Try chicken, pasta, curry..."
+                    aria-label="Search recipes by dish name"
+                    autocomplete="off"
+                    maxlength="100"
+                    required
+                >
+
+                <button type="submit" id="searchBtn">
+                    Search
+                </button>
+            </form>
+
+            <p class="search-hint">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                Try searching for your favorite dish
+            </p>
+        </section>
+
+        <section class="results-section" aria-label="Recipe results">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">EXPLORE THE MENU</span>
+                    <h2 id="resultsTitle">Discover recipes</h2>
+                </div>
+            </div>
+
+            <p id="searchStatus" class="search-status" role="status" aria-live="polite">
+                Search for a dish to discover recipes.
+            </p>
+
+            <div
+                class="recipe-container"
+                id="recipeContainer"
+                aria-busy="false"
+            ></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Made with <span aria-label="love">♥</span> for food lovers.</p>
+        <p>Recipe data provided by TheMealDB.</p>
+    </footer>
+
+    <div
+        class="modal"
+        id="recipeModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="modal-content">
+            <button
+                type="button"
+                class="close"
+                id="closeBtn"
+                aria-label="Close recipe"
+            >&times;</button>
+
+            <div id="modalContent"></div>
+        </div>
+    </div>
+</body>
 </html>
