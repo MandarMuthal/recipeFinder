@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Supports both redesigned and original HTML.
+    
     if (searchForm) {
         searchForm.addEventListener("submit", event => {
             event.preventDefault();
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Load suggested recipes when the website opens
+   
 loadSuggestedRecipes();
 
 async function loadSuggestedRecipes() {
@@ -227,7 +227,7 @@ async function loadSuggestedRecipes() {
             })
         );
 
-        // Combine results and remove duplicate recipes
+        
         const uniqueRecipes = [
             ...new Map(
                 results.flat().map(recipe => [recipe.idMeal, recipe])
